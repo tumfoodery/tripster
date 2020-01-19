@@ -2,11 +2,11 @@ const { gql } = require("apollo-server");
 
 const typeDefs = gql`
   type Query {
-    root: String
+    isLoggedIn: Boolean!
   }
 
   type Mutation {
-    # login(email: String): String # login token
+    login(email: String!, password: String!): String # login token
     signup(email: String!, password: String!): String
   }
 `;

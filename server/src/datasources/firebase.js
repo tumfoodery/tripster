@@ -21,12 +21,26 @@ class FirebaseAPI extends DataSource {
     this.context = config.context;
   }
 
-  async login() {}
+  isLoggedIn() {
+    return firebase.auth().currentUser ? true : false;
+  }
+
+  async login(args) {
+    try {
+      const { email, password } = args;
+      const res = await firebase
+        .auth()
+        .signInWithEmailAndPassword(email, password);
+      return res && res.user && res.user.uid;
+    } catch (error) {
+      console.error(error);
+      return error.message;
+    }
+  }
 
   async signup(args) {
-    const { email, password } = args;
-
     try {
+      const { email, password } = args;
       const res = await firebase
         .auth()
         .createUserWithEmailAndPassword(email, password);
