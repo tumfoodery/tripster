@@ -9,9 +9,9 @@ import * as serviceWorker from './serviceWorker';
 import App from './App';
 
 const cache = new InMemoryCache().writeData({ data: defaults });
-  
+
 const client = new ApolloClient({
-  uri: 'https://tripster-apollo.netlify.com/.netlify/functions/graphql',
+  uri: 'http://localhost:9000/.netlify/functions/graphql' || 'https://tripster-apollo.netlify.com/.netlify/functions/graphql',
   cache,
   resolvers,
   typeDefs

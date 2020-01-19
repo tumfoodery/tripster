@@ -21,6 +21,7 @@ const dataSources = () => ({
 });
 
 const server = new ApolloServer({
+  cors: { origin: '*', credentials: true },
   typeDefs,
   resolvers,
   dataSources,
