@@ -1,6 +1,10 @@
-# 🛸 tripster server - built on apollo
+# 🛸 Tripster GraphQL Server - Built on Apollo Server
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a7266ccb-530f-4332-8b68-696da32d30be/deploy-status)](https://app.netlify.com/sites/tripster-apollo/deploys)
+
+## Playground
+
+https://tripster-apollo.netlify.com/.netlify/functions/graphql
 
 ## Available Scripts
 
@@ -8,7 +12,7 @@ In the project directory, you can run:
 
 ### `npm start` 🚀
 
-Runs the Graphiql Playground.<br />
+Runs the Playground.<br />
 Open [http://localhost:9000](http://localhost:9000) to view it in the browser.
 
 The page will reload if you make edits.<br />
