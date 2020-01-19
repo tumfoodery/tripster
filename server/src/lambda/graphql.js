@@ -24,6 +24,7 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   dataSources,
+  // TODO: Make these ENV specific
   playground: true,
   introspection: true
 });
