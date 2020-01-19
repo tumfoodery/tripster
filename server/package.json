@@ -16,11 +16,10 @@
   ],
   "main": "src/index.js",
   "scripts": {
-    "build": "yarn netlify-lambda build src/lambda",
+    "build": "netlify-lambda build src/lambda",
     "build:lambda": "netlify-lambda build src/lambda",
-    "start": "NODE_ENV=development netlify-lambda serve src",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "netlify-lambda install src"
+    "start": "NODE_ENV=development netlify-lambda serve src/lambda",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "apollo-datasource": "^0.6.4",
