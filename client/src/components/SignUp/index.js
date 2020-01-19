@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox, Typography, Container, Grid } from '@material-ui/core';
+import { Avatar, Button, TextField, FormControlLabel, Checkbox, Typography, Container, Grid } from '@material-ui/core';
 import { Link } from "react-router-dom";
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import useStyles from './useStyles';
@@ -9,7 +9,6 @@ export default function SignUp() {
 
   return (
     <Container component="main" maxWidth="xs">
-      <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
