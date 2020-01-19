@@ -1,4 +1,6 @@
-# 🛸tripster server - built on apollo [![Netlify Status](https://api.netlify.com/api/v1/badges/a7266ccb-530f-4332-8b68-696da32d30be/deploy-status)](https://app.netlify.com/sites/tripster-apollo/deploys)
+# 🛸 tripster server - built on apollo
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a7266ccb-530f-4332-8b68-696da32d30be/deploy-status)](https://app.netlify.com/sites/tripster-apollo/deploys)
 
 ## Available Scripts
 
