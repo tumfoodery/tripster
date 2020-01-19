@@ -10,7 +10,7 @@ import Copyright from './components/Copyright';
 
 const cache = new InMemoryCache();
 const client = new ApolloClient({
-  uri: 'https://48p1r2roz4.sse.codesandbox.io', // TODO: Test data to be removed
+  uri: 'https://tripster-apollo.netlify.com/.netlify/functions/graphql',
   cache,
   resolvers,
   typeDefs
