@@ -1,6 +1,7 @@
 const { DataSource } = require("apollo-datasource");
-const firebase = require("firebase/app");
+const firebase = require("firebase/app").default;
 require("firebase/auth");
+global["XMLHttpRequest"] = require("xmlhttprequest").XMLHttpRequest;
 
 class FirebaseAPI extends DataSource {
   constructor({ firebaseConfig }) {

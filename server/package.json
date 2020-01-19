@@ -16,15 +16,21 @@
   ],
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "netlify-lambda build src",
+    "build:lambda": "netlify-lambda build src/lambda",
+    "start": "NODE_ENV=development netlify-lambda serve src",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "netlify-lambda install src"
   },
   "dependencies": {
     "apollo-datasource": "^0.6.4",
     "apollo-server": "^2.9.16",
+    "apollo-server-lambda": "^2.9.16",
     "apollo-server-testing": "^2.9.16",
     "dotenv": "^8.2.0",
     "firebase": "^7.7.0",
-    "nodemon": "^2.0.2"
+    "netlify-lambda": "^1.6.3",
+    "nodemon": "^2.0.2",
+    "xmlhttprequest": "^1.8.0"
   }
 }
