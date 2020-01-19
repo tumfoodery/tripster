@@ -28,12 +28,4 @@ const server = new ApolloServer({
   introspection: true
 });
 
-// Start our server if we're not in a test env.
-// if we're in a test env, we'll manually start it in a test
-// if (process.env.NODE_ENV !== "development" && process.env.NODE_ENV !== "test") {
-//   server
-//     .listen({ port: 4000 })
-//     .then(({ url }) => console.log(`🚀 app running at ${url}`));
-// }
-
 exports.handler = server.createHandler();

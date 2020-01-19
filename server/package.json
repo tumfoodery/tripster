@@ -14,7 +14,7 @@
     "Sue Ann Ioanis <sueann.ioanis@gmail.com>",
     "Michael Yuen <iam@mikey.baby>"
   ],
-  "main": "src/index.js",
+  "main": "src/lambda/graphql.js",
   "scripts": {
     "build": "npm run clean && netlify-lambda build src/lambda --config webpack.lambda.js",
     "clean": "rm -rf dist",
