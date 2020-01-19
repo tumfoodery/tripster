@@ -34,6 +34,7 @@ class FirebaseAPI extends DataSource {
       return "No user is logged in";
     } catch (error) {
       console.error(error);
+      return error;
     }
   }
 
