@@ -4,7 +4,6 @@ import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Copyright from './components/Copyright';
 
-
 function App() {
   return (
     <Router>
