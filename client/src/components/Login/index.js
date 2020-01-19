@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { useApolloClient } from "@apollo/react-hooks";
 import { Avatar, Button, TextField, FormControlLabel, Checkbox, Grid, Typography, Container } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import useStyles from './useStyles';
 
 export default function Login() {
   const classes = useStyles();
+  const client = useApolloClient();
   return (
     <Container component="main" maxWidth="xs">
       <div className={classes.paper}>
@@ -15,7 +17,10 @@ export default function Login() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} onSubmit={e => { e.preventDefault() }}>
+        <form className={classes.form} onSubmit={e => {
+          e.preventDefault();
+          client.writeData({ formData: e })
+        }}>
           <TextField
             variant="outlined"
             margin="normal"
