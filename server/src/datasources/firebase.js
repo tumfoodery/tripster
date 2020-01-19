@@ -40,6 +40,15 @@ class FirebaseAPI extends DataSource {
     }
   }
 
+  async logout() {
+    try {
+      return await firebase.auth().signOut();
+    } catch (error) {
+      console.error;
+      return error.message;
+    }
+  }
+
   async signup(args) {
     try {
       const { email, password } = args;
