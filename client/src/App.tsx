@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Login, Home, SignUp } from "components";
+import Login from "./components/Login";
+import Home from "./components/Home";
+import SignUp from "./components/SignUp";
 
 const App: React.FC = () => {
   return (
