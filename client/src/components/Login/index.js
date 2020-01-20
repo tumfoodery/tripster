@@ -19,7 +19,7 @@ export default function Login() {
   if (loading) return <CircularProgress />;
   if (error) return <Snackbar message={`Error! ${error.message}`} />;
 
-  return data && (
+  return (
     <Container component="main" maxWidth="xs">
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
