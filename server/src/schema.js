@@ -5,6 +5,7 @@ const typeDefs = gql`
     currentUser: User
     isLoggedIn: Boolean!
     sendEmailVerification: String
+    sendPasswordResetEmail(email: String!): String
   }
 
   type Mutation {

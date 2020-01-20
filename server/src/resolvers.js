@@ -5,7 +5,12 @@ const resolvers = {
     isLoggedIn: (_, __, { dataSources: { firebaseAPI } }) =>
       firebaseAPI.isLoggedIn(),
     sendEmailVerification: async (_, __, { dataSources: { firebaseAPI } }) =>
-      await firebaseAPI.sendEmailVerification()
+      await firebaseAPI.sendEmailVerification(),
+    sendPasswordResetEmail: async (
+      _,
+      { email },
+      { dataSources: { firebaseAPI } }
+    ) => firebaseAPI.sendPasswordResetEmail(email)
   },
   Mutation: {
     deleteUser: async (_, __, { dataSources: { firebaseAPI } }) =>

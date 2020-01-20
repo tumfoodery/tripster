@@ -96,6 +96,15 @@ class FirebaseAPI extends DataSource {
     }
   }
 
+  async sendPasswordResetEmail(email) {
+    try {
+      return await firebase.auth().sendPasswordResetEmail(email);
+    } catch (error) {
+      console.error(error);
+      return error.message;
+    }
+  }
+
   async signup(args) {
     try {
       const { email, password } = args;
