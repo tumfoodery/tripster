@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Avatar, Button, TextField, FormControlLabel, Checkbox, Typography, Container, Grid } from '@material-ui/core';
+import { Avatar, Button, TextField, Typography, Container, Grid } from '@material-ui/core';
 import { Link, Redirect } from "react-router-dom";
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import useStyles from './useStyles';
@@ -11,7 +11,6 @@ const SIGNUP = gql`
     signup(email: $email, password: $password)
   }
 `;
-
 
 export default function SignUp() {
   const classes = useStyles();

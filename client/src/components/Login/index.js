@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from "react-router-dom";
-import { Avatar, Button, TextField, FormControlLabel, Checkbox, Grid, Typography, Container } from '@material-ui/core';
+import { Avatar, Button, TextField, FormControlLabel, Checkbox, Grid, Typography, Container, Snackbar } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import useStyles from './useStyles';
 import gql from 'graphql-tag';
@@ -17,10 +17,13 @@ export default function Login() {
   const [credentials, setCredentials] = useState(null);
   const [login, { data }] = useMutation(LOGIN);
 
-  if (data) return <Redirect to='/dashboard' />;
+  if (data &&
+        data.login !== 'The password is invalid or the user does not have a password.'
+          && data.login !== 'Too many unsuccessful login attempts. Please try again later.') return <Redirect to='/dashboard' />;
 
   return (
     <Container component="main" maxWidth="xs">
+      <Snackbar open={data && data.login} duration={5000} message={data && data.login}/>
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
