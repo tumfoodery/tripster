@@ -17,7 +17,6 @@ export default function Login() {
         </Typography>
         <form className={classes.form} onSubmit={e => {
           e.preventDefault();
-          client.writeData({ formData: e })
         }}>
           <TextField
             variant="outlined"
