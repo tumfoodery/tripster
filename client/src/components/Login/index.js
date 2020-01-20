@@ -31,7 +31,7 @@ export default function Login() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} onSubmit={e => {
+        <form className={classes.form} noValidate onSubmit={e => {
           e.preventDefault();
           if (credentials) login({ variables: credentials });
         }}>
