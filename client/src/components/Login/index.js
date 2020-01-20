@@ -3,10 +3,23 @@ import { Link } from "react-router-dom";
 import { Avatar, Button, TextField, FormControlLabel, Checkbox, Grid, Typography, Container } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import useStyles from './useStyles';
+import { CircularProgress, Snackbar } from '@material-ui/core';
+import gql from 'graphql-tag';
+import { useQuery } from '@apollo/react-hooks';
+
+
+const IS_LOGGED_IN = gql`
+  { isLoggedIn }
+`;
 
 export default function Login() {
   const classes = useStyles();
-  return (
+  const { loading, error, data } = useQuery(IS_LOGGED_IN);
+
+  if (loading) return <CircularProgress />;
+  if (error) return <Snackbar message={`Error! ${error.message}`} />;
+
+  return data && (
     <Container component="main" maxWidth="xs">
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>

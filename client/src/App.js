@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { CssBaseline } from '@material-ui/core';
+import Home from './components/Home';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Copyright from './components/Copyright';
@@ -11,7 +12,7 @@ function App() {
       <CssBaseline />
       <Router>
         <Switch>
-          <Route path="/" exact component={Login} />
+          <Route path="/" exact component={Home} />
           <Route path="/login" exact component={Login} />
           <Route path="/signup" component={SignUp} />
         </Switch>
