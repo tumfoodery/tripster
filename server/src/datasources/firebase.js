@@ -28,7 +28,7 @@ class FirebaseAPI extends DataSource {
       const currentUser = this.getCurrentUser();
 
       if (!currentUser) {
-        return "No user is logged in";
+        return "User doesn't exist";
       }
 
       return await currentUser.delete();
