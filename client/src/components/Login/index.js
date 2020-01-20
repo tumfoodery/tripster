@@ -1,23 +1,23 @@
-import React from 'react';
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link, Redirect } from "react-router-dom";
 import { Avatar, Button, TextField, FormControlLabel, Checkbox, Grid, Typography, Container } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import useStyles from './useStyles';
-import { CircularProgress, Snackbar } from '@material-ui/core';
 import gql from 'graphql-tag';
-import { useQuery } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/react-hooks';
 
-
-const IS_LOGGED_IN = gql`
-  { isLoggedIn }
+const LOGIN = gql`
+  mutation login($email: String!, $password: String!) {
+    login(email: $email, password: $password)
+  }
 `;
 
 export default function Login() {
   const classes = useStyles();
-  const { loading, error, data } = useQuery(IS_LOGGED_IN);
+  const [credentials, setCredentials] = useState(null);
+  const [login, { data }] = useMutation(LOGIN);
 
-  if (loading) return <CircularProgress />;
-  if (error) return <Snackbar message={`Error! ${error.message}`} />;
+  if (data) return <Redirect to='/dashboard' />;
 
   return (
     <Container component="main" maxWidth="xs">
@@ -30,6 +30,7 @@ export default function Login() {
         </Typography>
         <form className={classes.form} onSubmit={e => {
           e.preventDefault();
+          if (credentials) login({ variables: credentials });
         }}>
           <TextField
             variant="outlined"
@@ -41,6 +42,7 @@ export default function Login() {
             name="email"
             autoComplete="email"
             autoFocus
+            onInput={ e => setCredentials({...credentials, email: e.target.value})}
           />
           <TextField
             variant="outlined"
@@ -52,6 +54,7 @@ export default function Login() {
             type="password"
             id="password"
             autoComplete="current-password"
+            onInput={ e => setCredentials({...credentials, password: e.target.value})}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
