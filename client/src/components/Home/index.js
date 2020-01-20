@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { AppBar, Tabs, Tab, Typography, Box } from '@material-ui/core';
 import Trips from '../Trips';
+import Copyright from '../Copyright';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -75,6 +76,7 @@ export default function NavTabs() {
       <TabPanel value={value} index={2}>
         Settings
       </TabPanel>
+      <Copyright />
     </>
   );
 }

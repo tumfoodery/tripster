@@ -4,7 +4,6 @@ import { CssBaseline } from '@material-ui/core';
 import Home from './components/Home';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
-import Copyright from './components/Copyright';
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
           <Route path="/login" exact component={Login} />
           <Route path="/signup" component={SignUp} />
         </Switch>
-        <Copyright />
       </Router>
     </>
   );
