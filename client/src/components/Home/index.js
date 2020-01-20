@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useHistory } from "react-router-dom";
 import { AppBar, Tabs, Tab, Typography, Box } from '@material-ui/core';
 import Trips from '../Trips';
 import Copyright from '../Copyright';
@@ -52,6 +53,7 @@ export default function NavTabs() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  const history = useHistory();
 
   return (
     <>
@@ -65,6 +67,11 @@ export default function NavTabs() {
           <LinkTab label="My Trips" href="/drafts" {...a11yProps(0)} />
           <LinkTab label="Coordinate" href="/trash" {...a11yProps(1)} />
           <LinkTab label="Settings" href="/spam" {...a11yProps(2)} />
+          <LinkTab label="Logout" href="/login" {...a11yProps(3)}
+            onClick={() => {
+              history.push('/login')
+            }}
+          />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>

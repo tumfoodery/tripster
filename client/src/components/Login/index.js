@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from "react-router-dom";
-import { Avatar, Button, TextField, FormControlLabel, Checkbox, Grid, Typography, Container, Snackbar } from '@material-ui/core';
+import { Avatar, Button, TextField, Grid, Typography, Container, Snackbar } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import useStyles from './useStyles';
 import gql from 'graphql-tag';
@@ -58,10 +58,6 @@ export default function Login() {
             id="password"
             autoComplete="current-password"
             onInput={ e => setCredentials({...credentials, password: e.target.value})}
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
           />
           <Button
             type="submit"

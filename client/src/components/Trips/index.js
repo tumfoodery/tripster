@@ -21,7 +21,7 @@ export default function CenteredGrid() {
     <div className={classes.root}>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Paper className={classes.paper}>Hello, Michael! Welcome back 💃</Paper>
+          <Paper className={classes.paper}>Hello, Michael! Welcome back <span role="img" aria-label="dance">💃</span></Paper>
         </Grid>
         <Grid item xs={6}>
           <Paper className={classes.paper}>Trip 1</Paper>
