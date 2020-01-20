@@ -27,11 +27,11 @@ class FirebaseAPI extends DataSource {
     try {
       const currentUser = this.getCurrentUser();
 
-      if (currentUser) {
-        return await currentUser.delete();
+      if (!currentUser) {
+        return "No user is logged in";
       }
 
-      return "No user is logged in";
+      return await currentUser.delete();
     } catch (error) {
       console.error(error);
       return error;
@@ -72,13 +72,14 @@ class FirebaseAPI extends DataSource {
     try {
       const currentUser = this.getCurrentUser();
 
-      if (currentUser) {
-        return await currentUser.reload();
+      if (!currentUser) {
+        return "No user is logged in";
       }
 
-      return "No user is logged in";
+      return await currentUser.reload();
     } catch (error) {
       console.error(error);
+      return error;
     }
   }
 
@@ -86,13 +87,18 @@ class FirebaseAPI extends DataSource {
     try {
       const currentUser = this.getCurrentUser();
 
-      if (currentUser) {
-        return await currentUser.sendEmailVerification();
+      if (!currentUser) {
+        return "No user is logged in";
       }
 
-      return "No user is logged in";
+      if (currentUser.emailVerified) {
+        return "User's email is already verified";
+      }
+
+      return await currentUser.sendEmailVerification();
     } catch (error) {
       console.error(error);
+      return error.message;
     }
   }
 
