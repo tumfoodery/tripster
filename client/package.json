@@ -6,30 +6,35 @@
   ],
   "version": "0.1.0",
   "description": "Tripster React App",
-  "main": "index.js",
   "dependencies": {
     "@apollo/react-hooks": "^3.1.3",
-    "@material-ui/core": "^4.8.3",
-    "@material-ui/icons": "^4.5.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/jest": "^24.9.0",
+    "@types/node": "^12.12.25",
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
     "apollo-boost": "^0.4.7",
     "graphql": "^14.5.8",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.0"
+    "react-scripts": "3.3.0",
+    "styled-components": "^5.0.0",
+    "typescript": "^3.7.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "plugin:prettier/recommended"
+    ]
   },
   "browserslist": {
     "production": [
@@ -43,19 +48,12 @@
       "last 1 safari version"
     ]
   },
-  "keywords": [
-    "tripster",
-    "trip",
-    "travel",
-    "react",
-    "ssr"
-  ],
-  "license": "MIT",
   "devDependencies": {
     "@storybook/addon-actions": "^5.3.7",
     "@storybook/addon-links": "^5.3.7",
     "@storybook/addons": "^5.3.7",
     "@storybook/preset-create-react-app": "^1.5.2",
-    "@storybook/react": "^5.3.7"
+    "@storybook/react": "^5.3.7",
+    "prettier": "1.19.1"
   }
 }
