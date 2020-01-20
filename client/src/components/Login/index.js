@@ -56,10 +56,6 @@ export default function Login() {
             autoComplete="current-password"
             onInput={ e => setCredentials({...credentials, password: e.target.value})}
           />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
           <Button
             type="submit"
             fullWidth
