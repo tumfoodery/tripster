@@ -1,4 +1,5 @@
 import React from 'react';
+import { Normalize } from 'styled-normalize';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./components/Login";
 import Home from "./components/Home";
@@ -7,6 +8,7 @@ import SignUp from "./components/SignUp";
 const App: React.FC = () => {
   return (
     <Router>
+      <Normalize />
       <Switch>
         <Route path="/" exact component={Login} />
         <Route path="/dashboard" exact component={Home} />
