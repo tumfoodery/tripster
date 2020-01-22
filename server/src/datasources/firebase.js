@@ -47,7 +47,7 @@ class FirebaseAPI extends DataSource {
       const { user } = await this.firebase
         .auth()
         .signInWithEmailAndPassword(email, password);
-      return user.uid;
+      return await user.getIdToken();
     } catch (error) {
       console.error(error);
       return error.message;
@@ -118,7 +118,7 @@ class FirebaseAPI extends DataSource {
       // Attempt to send email verification
       await this.sendEmailVerification();
 
-      return user.uid;
+      return await user.getIdToken();
     } catch (error) {
       console.error(error);
       return error.message;
