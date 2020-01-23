@@ -27,8 +27,7 @@ admin.initializeApp({
 });
 
 const dataSources = () => ({
-  firebaseAPI: new FirebaseAPI({ firebase }),
-  firebaseAdminAPI: new FirebaseAdminAPI({ admin })
+  firebaseAPI: new FirebaseAPI({ firebase })
 });
 
 const context = async ({ event }) => {

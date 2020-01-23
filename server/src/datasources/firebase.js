@@ -23,7 +23,7 @@ class FirebaseAPI extends DataSource {
       const currentUser = this.getCurrentUser();
 
       if (!currentUser) {
-        return "User doesn't exist";
+        return "Can not complete this operation";
       }
 
       return await currentUser.delete();
