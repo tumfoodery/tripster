@@ -23,10 +23,10 @@ export default function Login() {
       if (credentials) login({ variables: credentials });
     }}>
       <input
-        onChange={ e => setCredentials({...credentials, email: e.target.value})}
+        onChange={e => setCredentials({...credentials, email: e.target.value})}
       />
       <input
-        onChange={ e => setCredentials({...credentials, password: e.target.value})}
+        onChange={e => setCredentials({...credentials, password: e.target.value})}
       />
       <button
         type="submit"
