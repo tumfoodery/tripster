@@ -4,8 +4,9 @@ const firebase = require("firebase/app").default;
 require("firebase/auth");
 const admin = require("firebase-admin");
 const env = require("../env");
-const typeDefs = require("../schema");
 const resolvers = require("../resolvers");
+const typeDefs = require("../schema");
+const { parseToken } = require("../utils");
 const FirebaseAPI = require("../datasources/firebase");
 
 const firebaseConfig = {
@@ -30,9 +31,9 @@ const dataSources = () => ({
   firebaseAPI: new FirebaseAPI({ firebase })
 });
 
-const context = async ({ event }) => {
+const context = async req => {
   try {
-    const token = (event.headers && event.headers.authorization) || "";
+    const token = parseToken(req);
 
     if (!token) {
       return null;
