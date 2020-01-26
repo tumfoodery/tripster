@@ -42,6 +42,11 @@ const context = async req => {
     const user = await admin.auth().getUser(decodedToken.uid);
     return { user };
   } catch (error) {
+    /**
+     * TODO: auth/id-token-expired
+     * https://firebase.google.com/docs/auth/admin/errors
+     * - How should we handle this?
+     */
     console.error(error.message);
     return error.message;
   }
