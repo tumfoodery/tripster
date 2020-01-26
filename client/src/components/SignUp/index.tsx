@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from "react-router-dom";
+import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
+
+const SIGNUP = gql`
+  mutation signup($email: String!, $password: String!) {
+    signup(email: $email, password: $password)
+  }
+`;
 
 export default function SignUp() {
   const [credentials, setCredentials] = useState({});
