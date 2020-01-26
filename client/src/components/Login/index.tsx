@@ -1,17 +1,11 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from "react-router-dom";
-import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
-
-const LOGIN = gql`
-  mutation login($email: String!, $password: String!) {
-    login(email: $email, password: $password)
-  }
-`;
+import { typeDefs } from '../../schema';
 
 export default function Login() {
   const [credentials, setCredentials] = useState({});
-  const [login, { data }] = useMutation(LOGIN);
+  const [login, { data }] = useMutation(typeDefs);
 
   if (data &&
         data.login !== 'The password is invalid or the user does not have a password.'

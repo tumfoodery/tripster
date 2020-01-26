@@ -1,13 +1,12 @@
-export const typeDefs = `
-  type User {
-    id: String,
+import gql from 'graphql-tag';
+
+export const typeDefs = gql`
+  type Query {
+    isLoggedIn: Boolean!
   }
 
   type Mutation {
-    getUser(user: User!): Object
-  }
-
-  type Query {
-    isLoggedIn: Boolean,
+    login(email: String!, password: String!): String # login token
+    signup(email: String!, password: String!): String
   }
 `;
