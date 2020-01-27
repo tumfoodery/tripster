@@ -10,7 +10,9 @@ import SignUp from './components/SignUp';
 const App: React.FC = () => {
   return (
     <>
-      <Toast />
+      <Toast />    
+
+      
       <Normalize />
       <Router>
         <Switch>
