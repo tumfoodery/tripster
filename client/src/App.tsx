@@ -11,9 +11,7 @@ const App: React.FC = () => {
   return (
     <>
       <Toast />
-
       <Normalize />
-
       <Router>
         <Switch>
           <Route path="/" exact component={Login} />
