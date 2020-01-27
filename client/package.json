@@ -42,9 +42,16 @@
     "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
+    "rules": {
+      "prettier/prettier": "error"
+    },
     "extends": [
       "react-app",
-      "plugin:prettier/recommended"
+      "plugin:prettier/recommended",
+      "prettier/react"
+    ],
+    "plugins": [
+      "prettier"
     ]
   },
   "browserslist": {
