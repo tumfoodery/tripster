@@ -27,7 +27,7 @@
     "typescript": "^3.7.5"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx,json,css,scss,md}": [
+    "*.{ts,tsx,json,css,scss,md}": [
       "prettier --write",
       "git add"
     ]
