@@ -5,15 +5,18 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Toast from "react-toast-component"; 
 import Login from "./components/Login";   
 import Home from "./components/Home";
-import SignUp from './components/SignUp';       
+import SignUp from './components/SignUp';         
 
 const App: React.FC = () => {
   return (
     <>
       <Toast />    
 
-      
+
       <Normalize />
+
+
+      
       <Router>
         <Switch>
           <Route path="/" exact component={Login} />
