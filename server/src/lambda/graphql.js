@@ -42,7 +42,6 @@ const context = async req => {
     if (!token) {
       return null;
     }
-
     const decodedToken = await admin.auth().verifyIdToken(token);
     const user = await admin.auth().getUser(decodedToken.uid);
     return { user };
