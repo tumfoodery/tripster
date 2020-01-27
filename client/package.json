@@ -33,25 +33,6 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*": [
-      "prettier --write",
-      "eslint --fix src/",
-      "tslint --fix --project .",
-      "git add"
-    ],
-    "src/**/*": [
-      "prettier --write",
-      "eslint --fix src/",
-      "tslint --fix --project .",
-      "git add" 
-    ]
-  },
   "eslintConfig": {
     "rules": {
       "prettier/prettier": "error"
@@ -82,8 +63,6 @@
     "@storybook/addon-links": "^5.3.7",
     "@storybook/addons": "^5.3.7",
     "@storybook/react": "^5.3.7",
-    "husky": "^4.2.1",
-    "lint-staged": "^10.0.2",
     "prettier": "^1.19.1"
   },
   "keywords": [

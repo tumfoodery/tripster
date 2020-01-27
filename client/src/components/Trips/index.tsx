@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react";
 
 export default function Trips() {
-  return (
-    <div>TRIPS</div>
-  );
+  return <div>TRIPS</div>;
 }
