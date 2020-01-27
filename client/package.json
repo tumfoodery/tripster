@@ -49,7 +49,7 @@
       "prettier --write",
       "eslint --fix src/",
       "tslint --fix --project .",
-      "git add"
+      "git add" 
     ]
   },
   "eslintConfig": {
