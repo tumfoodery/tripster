@@ -13,7 +13,7 @@ const App: React.FC = () => {
       <Toast />    
 
 
-      <Normalize />
+      <Normalize /> 
 
 
         
