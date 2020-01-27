@@ -26,23 +26,25 @@
     "styled-normalize": "^8.0.6",
     "typescript": "^3.7.5"
   },
-  "lint-staged": {
-    "*.{ts,tsx,json,css,scss,md}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,css,md}": [
+      "prettier --write",
+      "eslint --fix src/",
+      "tslint --fix --project .",
+      "git add"
+    ]
   },
   "eslintConfig": {
     "rules": {
