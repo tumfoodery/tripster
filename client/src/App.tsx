@@ -1,17 +1,17 @@
 import React from "react";
-
-import { Normalize } from "styled-normalize";
+import { ThemeProvider } from 'styled-components';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Toast from "react-toast-component";
+
+import { theme } from './style/Theme';
 import Login from "./components/Login";
 import Home from "./components/Home";
 import SignUp from "./components/SignUp";
 
 const App: React.FC = () => {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Toast />
-      <Normalize />
       <Router>
         <Switch>
           <Route path="/" exact component={Login} />
@@ -20,7 +20,7 @@ const App: React.FC = () => {
           <Route path="/signup" component={SignUp} />
         </Switch>
       </Router>
-    </>
+    </ThemeProvider>
   );
 };
 
