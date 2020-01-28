@@ -38,11 +38,10 @@ class FirebaseAdmin extends DataSource {
   }
 
   async deleteUser() {
+    if (!this.context.user) {
+      throw new ForbiddenError("Operation requires authenticated user");
+    }
     try {
-      if (!this.context.user) {
-        throw new ForbiddenError("Operation requires authenticated user");
-      }
-
       this.db.doc(`users/${this.context.user.uid}`).delete();
       return await this.admin.auth().deleteUser(this.context.user.uid);
     } catch (error) {
@@ -52,11 +51,10 @@ class FirebaseAdmin extends DataSource {
   }
 
   async getCurrentUser() {
+    if (!this.context.user) {
+      return null;
+    }
     try {
-      if (!this.context.user) {
-        return null;
-      }
-
       const dbUser = await this.db.doc(`users/${this.context.user.uid}`).get();
       return {
         ...dbUser.data(),
@@ -69,11 +67,11 @@ class FirebaseAdmin extends DataSource {
   }
 
   async getCustomToken() {
+    if (!this.context.user) {
+      throw new AuthenticationError("Operation requires authenticated user");
+    }
     try {
-      if (!this.context.user) {
-        throw new AuthenticationError("Operation requires authenticated user");
-      }
-      return this.admin.auth().createCustomToken(this.context.user.uid);
+      return await this.admin.auth().createCustomToken(this.context.user.uid);
     } catch (error) {
       console.error(error);
       throw new ApolloError(error.message);

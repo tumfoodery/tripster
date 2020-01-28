@@ -31,15 +31,15 @@ class FirebaseClient extends DataSource {
   }
 
   async sendEmailVerification(customToken) {
+    if (!this.context.user) {
+      throw new AuthenticationError("Operation requires authenticated user");
+    }
+
+    if (this.context.user.emailVerified) {
+      throw new ApolloError("User's email is already verified");
+    }
+
     try {
-      if (!this.context.user) {
-        throw new AuthenticationError("Operation requires authenticated user");
-      }
-
-      if (this.context.user.emailVerified) {
-        throw new ApolloError("User's email is already verified");
-      }
-
       const { user } = await this.firebase
         .auth()
         .signInWithCustomToken(customToken);
@@ -62,11 +62,11 @@ class FirebaseClient extends DataSource {
   }
 
   async signup(args) {
-    try {
-      if (this.context.user) {
-        throw new AuthenticationError("Why are you trying to sign up again?");
-      }
+    if (this.context.user) {
+      throw new AuthenticationError("Why are you trying to sign up again?");
+    }
 
+    try {
       const { email, password } = args;
       const {
         user
