@@ -5,7 +5,9 @@ import { noop } from "../../utils/fn";
 const InputContainer = styled.input`
   border: none;
   border-bottom: 1px solid;
-  margin: 10px;
+  background: transparent;
+  margin: ${props => props.theme.spacing.default};
+  padding: ${props => props.theme.spacing.default};
 `;
 
 export default function Input(prop: {
