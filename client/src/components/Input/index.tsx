@@ -6,7 +6,7 @@ const InputContainer = styled.input`
   border-bottom: 1px solid;
 `;
 
-export default function Input(prop: { placeholder: string }) {
-  const { placeholder } = prop;
+export default function Input(prop: { placeholder?: string }) {
+  const { placeholder = "" } = prop;
   return <InputContainer placeholder={placeholder} />;
 }
