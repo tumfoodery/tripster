@@ -1,16 +1,33 @@
 import React from "react";
-import { ThemeProvider } from 'styled-components';
+import {
+  ThemeProvider,
+  createGlobalStyle
+} from "styled-components";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Toast from "react-toast-component";
 
-import { theme } from './style/Theme';
+import { theme } from "./style/theme";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import SignUp from "./components/SignUp";
 
+const GlobalStyle = createGlobalStyle`
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: ${props => props.theme.color.text};
+    background: ${props => props.theme.color.background};
+  }
+  a {
+    text-decoration: none;
+    color: ${props => props.theme.color.link};
+  }
+`;
+
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <Toast />
       <Router>
         <Switch>
