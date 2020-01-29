@@ -3,6 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import gql from "graphql-tag";
 import { useMutation } from "@apollo/react-hooks";
 import Button from "../Button";
+import Input from "../Input";
 
 const LOGIN = gql`
   mutation login($email: String!, $password: String!) {
@@ -30,12 +31,12 @@ export default function Login() {
         if (credentials) login({ variables: credentials });
       }}
     >
-      <input
+      <Input
         onChange={e =>
           setCredentials({ ...credentials, email: e.target.value })
         }
       />
-      <input
+      <Input
         onChange={e =>
           setCredentials({ ...credentials, password: e.target.value })
         }
