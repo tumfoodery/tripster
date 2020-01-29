@@ -20,4 +20,5 @@ module.exports = {
       },
     },
   ],
+  styles: ['node_modules/modern-normalize/modern-normalize.css']
 };

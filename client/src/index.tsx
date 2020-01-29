@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Normalize } from 'styled-normalize'
 import ApolloClient, { InMemoryCache } from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
 import { resolvers } from "./resolvers";
 import { typeDefs } from "./schema";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+
+import 'modern-normalize/modern-normalize.css';
 
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -23,7 +24,6 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <Normalize />
     <App />
   </ApolloProvider>,
   document.getElementById("root")
