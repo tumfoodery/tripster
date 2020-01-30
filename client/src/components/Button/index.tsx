@@ -9,6 +9,7 @@ const ButtonContainer = styled.button`
   border-radius: ${props => props.theme.spacing.borderRadius};
   margin: ${props => props.theme.spacing.default};
   padding: ${props => props.theme.spacing.default};
+  background: transparent;
 `;
 
 export default function Button(prop: { onClick?: Function; children: any }) {

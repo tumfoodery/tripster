@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  ThemeProvider,
-  createGlobalStyle
-} from "styled-components";
+import { ThemeProvider, createGlobalStyle } from "styled-components";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Toast from "react-toast-component";
 
@@ -17,11 +14,16 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     color: ${props => props.theme.color.text};
     background: ${props => props.theme.color.background};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
   }
   a {
     text-decoration: none;
     color: ${props => props.theme.color.link};
   }
+  
 `;
 
 const App: React.FC = () => {

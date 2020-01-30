@@ -10,12 +10,13 @@ const InputContainer = styled.input`
   padding: ${props => props.theme.spacing.default};
 `;
 
-export default function Input(prop: {
-  placeholder?: string;
-  onChange?: Function;
-}) {
-  const { placeholder = "", onChange = noop } = prop;
+export default function Input(prop: any) {
+  const { placeholder = "", onChange = noop, ...rest } = prop;
   return (
-    <InputContainer placeholder={placeholder} onChange={e => onChange(e)} />
+    <InputContainer
+      placeholder={placeholder}
+      onChange={e => onChange(e)}
+      {...rest}
+    />
   );
 }

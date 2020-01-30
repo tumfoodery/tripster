@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import gql from "graphql-tag";
 import { useMutation } from "@apollo/react-hooks";
-import { noop } from "../../utils/fn";
 import Button from "../Button";
 import Input from "../Input";
+import Form from "../Form";
 
 const LOGIN = gql`
   mutation login($email: String!, $password: String!) {
@@ -13,10 +13,7 @@ const LOGIN = gql`
 `;
 
 export default function Login() {
-  const [
-    credentials
-    // setCredentials
-  ] = useState({});
+  const [credentials, setCredentials] = useState({});
   const [login, { data }] = useMutation(LOGIN);
 
   if (
@@ -29,17 +26,37 @@ export default function Login() {
     return <Redirect to="/dashboard" />;
 
   return (
-    <form
-      onSubmit={e => {
+    <Form
+      onSubmit={(e: any) => {
         e.preventDefault();
+        console.log(e);
+        debugger;
         if (credentials) login({ variables: credentials });
       }}
     >
-      <Input onChange={noop} />
-      <Input onChange={noop} />
+      <Input
+        onChange={(e: any) =>
+          setCredentials({
+            ...credentials,
+            email: e.currentTarget.value
+          })
+        }
+        placeholder="Email"
+        type="email"
+      />
+      <Input
+        onChange={(e: any) =>
+          setCredentials({
+            ...credentials,
+            password: e.currentTarget.value
+          })
+        }
+        placeholder="Password"
+        type="password"
+      />
       <Button>Sign In</Button>
       <Link to="/forgot">Forgot password?</Link>
       <Link to="/signup">{"Don't have an account? Sign Up"}</Link>
-    </form>
+    </Form>
   );
 }
