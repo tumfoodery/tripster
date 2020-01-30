@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import gql from "graphql-tag";
-import { useMutation } from "@apollo/react-hooks";
+import { useMutation, useApolloClient } from "@apollo/react-hooks";
 import Button from "../Button";
 import Input from "../Input";
 import Form from "../Form";
@@ -15,6 +15,7 @@ const LOGIN = gql`
 export default function Login() {
   const [credentials, setCredentials] = useState({});
   const [login, { data }] = useMutation(LOGIN);
+  const client = useApolloClient();
 
   if (
     data &&
@@ -29,9 +30,10 @@ export default function Login() {
     <Form
       onSubmit={(e: any) => {
         e.preventDefault();
-        console.log(e);
-        debugger;
-        if (credentials) login({ variables: credentials });
+        if (credentials)
+          login({ variables: credentials }).catch(err =>
+            client.writeData({ data: err })
+          );
       }}
     >
       <Input
@@ -43,6 +45,7 @@ export default function Login() {
         }
         placeholder="Email"
         type="email"
+        required
       />
       <Input
         onChange={(e: any) =>
@@ -53,6 +56,7 @@ export default function Login() {
         }
         placeholder="Password"
         type="password"
+        required
       />
       <Button>Sign In</Button>
       <Link to="/forgot">Forgot password?</Link>

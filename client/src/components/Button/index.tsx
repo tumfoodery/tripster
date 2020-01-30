@@ -12,9 +12,11 @@ const ButtonContainer = styled.button`
   background: transparent;
 `;
 
-export default function Button(prop: { onClick?: Function; children: any }) {
-  const { onClick = noop, children = "" } = prop;
+export default function Button(prop: any) {
+  const { onClick = noop, children = "", ...rest } = prop;
   return (
-    <ButtonContainer onClick={e => onClick(e)}>{children}</ButtonContainer>
+    <ButtonContainer onClick={e => onClick(e)} {...rest}>
+      {children}
+    </ButtonContainer>
   );
 }

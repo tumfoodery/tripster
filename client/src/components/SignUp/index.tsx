@@ -4,7 +4,7 @@ import gql from "graphql-tag";
 import { useMutation } from "@apollo/react-hooks";
 import Input from "../Input";
 import Form from "../Form";
-import { noop } from "../../utils/fn";
+import Button from "../Button";
 
 const SIGNUP = gql`
   mutation signup(
@@ -23,10 +23,7 @@ const SIGNUP = gql`
 `;
 
 export default function SignUp() {
-  const [
-    credentials
-    // setCredentials
-  ] = useState({});
+  const [credentials, setCredentials] = useState({});
   const [signup, { data }] = useMutation(SIGNUP);
 
   if (data) return <Redirect to="/" />;
@@ -35,15 +32,50 @@ export default function SignUp() {
     <Form
       onSubmit={(e: any) => {
         e.preventDefault();
-        debugger;
         if (credentials) signup({ variables: credentials });
       }}
     >
-      <Input onChange={noop} placeholder="first name" />
-      <Input onChange={noop} placeholder="last name" />
-      <Input onChange={noop} placeholder="email" />
-      <Input onChange={noop} placeholder="password" />
-      <button type="submit">Sign Up</button>
+      <Input
+        onChange={(e: any) =>
+          setCredentials({
+            ...credentials,
+            firstName: e.currentTarget.value
+          })
+        }
+        placeholder="first name"
+        required
+      />
+      <Input
+        onChange={(e: any) =>
+          setCredentials({
+            ...credentials,
+            lastName: e.currentTarget.value
+          })
+        }
+        placeholder="last name"
+        required
+      />
+      <Input
+        onChange={(e: any) =>
+          setCredentials({
+            ...credentials,
+            email: e.currentTarget.value
+          })
+        }
+        placeholder="email"
+        required
+      />
+      <Input
+        onChange={(e: any) =>
+          setCredentials({
+            ...credentials,
+            password: e.currentTarget.value
+          })
+        }
+        placeholder="password"
+        required
+      />
+      <Button type="submit">Sign Up</Button>
       <Link to="login">Already have an account? Sign in</Link>
     </Form>
   );
