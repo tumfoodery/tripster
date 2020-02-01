@@ -1,26 +1,24 @@
-// import gql from "graphql-tag";
+import gql from "graphql-tag";
 import React from "react";
 import { ThemeProvider } from "styled-components";
-// import { useQuery } from "@apollo/react-hooks";
+import { useQuery } from "@apollo/react-hooks";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Toast from "react-toast-component";
 
 import { theme, GlobalStyle } from "./style/theme";
-import Login from "./components/Login";
-import Home from "./components/Home";
-import SignUp from "./components/SignUp";
+import Login from "./containers/Login";
+import Home from "./containers/Home";
+import SignUp from "./containers/SignUp";
 
-// const GET_NOTIFICATIONS = gql`
-//   {
-//     errors @client
-//   }
-// `;
+const GET_NOTIFICATIONS = gql`
+  {
+    errors @client
+  }
+`;
 
 const App: React.FC = () => {
-  // const {
-  //   // data: { errors }
-  // } = useQuery(GET_NOTIFICATIONS);
-  // console.log(errors);
+  const { data } = useQuery(GET_NOTIFICATIONS);
+  console.log(data);
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
