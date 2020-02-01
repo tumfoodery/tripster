@@ -31,9 +31,10 @@ export default function Login() {
       onSubmit={(e: any) => {
         e.preventDefault();
         if (credentials)
-          login({ variables: credentials }).catch(err =>
-            client.writeData({ data: err })
-          );
+          login({ variables: credentials }).catch(err => {
+            client.writeData({ data: { errors: err } });
+            alert(err);
+          });
       }}
     >
       <Input

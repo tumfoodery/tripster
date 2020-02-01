@@ -1,5 +1,7 @@
+// import gql from "graphql-tag";
 import React from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
+// import { useQuery } from "@apollo/react-hooks";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Toast from "react-toast-component";
 
@@ -26,7 +28,17 @@ const GlobalStyle = createGlobalStyle`
   
 `;
 
+// const GET_NOTIFICATIONS = gql`
+//   {
+//     errors @client
+//   }
+// `;
+
 const App: React.FC = () => {
+  // const {
+  //   // data: { errors }
+  // } = useQuery(GET_NOTIFICATIONS);
+  // console.log(errors);
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
