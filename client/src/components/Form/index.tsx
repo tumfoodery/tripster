@@ -6,6 +6,10 @@ const FormContainer = styled.form`
   width: 300px;
   margin: 0 auto;
 
+  a {
+    font-size: ${props => props.theme.font.small};
+  }
+
   > * {
     width: 100%;
     display: block;

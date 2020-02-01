@@ -4,9 +4,8 @@ import { noop } from "../../utils/fn";
 
 const InputContainer = styled.input`
   border: none;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid ${props => props.theme.color.secondary};
   background: transparent;
-  margin: ${props => props.theme.spacing.default};
   padding: ${props => props.theme.spacing.default};
 `;
 

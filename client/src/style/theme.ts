@@ -14,17 +14,21 @@ export const theme: DefaultTheme = {
     default: "10px",
     borderRadius: "2px",
     border: "1px"
+  },
+  font: {
+    small: "12px"
   }
 };
 
 export const GlobalStyle = createGlobalStyle`
-body {
-  color: ${props => props.theme.color.text};
-  background: ${props => props.theme.color.background};
-  max-width: ${props => props.theme.grid.maxWidth};
-}
-a {
-  text-decoration: none;
-  color: ${props => props.theme.color.link};
-}
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: ${props => props.theme.color.text};
+    background: ${props => props.theme.color.background};
+  }
+  a {
+    text-decoration: none;
+    color: ${props => props.theme.color.link};
+  }
 `;

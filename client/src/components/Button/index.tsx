@@ -3,13 +3,16 @@ import styled from "styled-components";
 import { noop } from "../../utils/fn";
 
 const ButtonContainer = styled.button`
-  color: ${props => props.theme.color.text};
   border: ${props => props.theme.spacing.border} solid
-    ${props => props.theme.color.text};
+    ${props => props.theme.color.secondary};
   border-radius: ${props => props.theme.spacing.borderRadius};
-  margin: ${props => props.theme.spacing.default};
   padding: ${props => props.theme.spacing.default};
-  background: transparent;
+  background: ${props => props.theme.color.secondary};
+  color: ${props => props.theme.color.background};
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export default function Button(prop: any) {

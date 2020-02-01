@@ -35,6 +35,7 @@ export default function SignUp() {
         if (credentials) signup({ variables: credentials });
       }}
     >
+      <h1>🏕</h1>
       <Input
         onChange={(e: any) =>
           setCredentials({
@@ -73,6 +74,7 @@ export default function SignUp() {
           })
         }
         placeholder="password"
+        type="password"
         required
       />
       <Button type="submit">Sign Up</Button>

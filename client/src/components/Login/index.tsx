@@ -37,6 +37,7 @@ export default function Login() {
           });
       }}
     >
+      <h1>🏕</h1>
       <Input
         onChange={(e: any) =>
           setCredentials({
