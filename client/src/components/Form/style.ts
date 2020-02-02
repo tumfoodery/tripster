@@ -13,7 +13,9 @@ export const FormContainer = styled.form`
   }
 
   h1,
-  a {
+  a,
+  span,
+  div {
     text-align: center;
   }
 `;

@@ -6,6 +6,7 @@ import Button from "components/Button";
 import Input from "components/Input";
 import Form from "components/Form";
 import { LayoutSmall } from "components/Layout";
+import { darkMode } from "style/theme";
 
 const LOGIN = gql`
   mutation login($email: String!, $password: String!) {
@@ -66,6 +67,22 @@ export default function Login(props: any) {
         <Button>Sign In</Button>
         <Link to="/forgot-password">Forgot password?</Link>
         <Link to="/signup">{"Don't have an account? Sign Up"}</Link>
+        <div>
+          <span
+            role="img"
+            aria-label="sun"
+            onClick={() => darkMode(!darkMode())}
+          >
+            ☀️
+          </span>
+          <span
+            role="img"
+            aria-label="moon"
+            onClick={() => darkMode(!darkMode())}
+          >
+            🌙
+          </span>
+        </div>
       </Form>
     </LayoutSmall>
   );
