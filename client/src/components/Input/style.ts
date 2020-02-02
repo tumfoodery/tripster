@@ -13,15 +13,19 @@ export const InputContainer = styled.label`
     border: none;
     border-bottom: 1px solid ${colorSecondary};
     background: transparent;
+    box-shadow: 0 0 0 1000px ${colorBackground} inset;
     -webkit-box-shadow: 0 0 0px 1000px ${colorBackground} inset;
     outline: none;
     padding: ${spacingDefault} 0;
     width: 100%;
+    color: ${colorText} !important;
   }
 
-  input,
-  input::-webkit-input-placeholder,
-  input:-moz-placeholder {
-    color: ${colorText} !important;
+  input::placeholder,
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    box-shadow: 0 0 0 1000px ${colorBackground} inset;
+    -webkit-text-fill-color: ${colorText};
   }
 `;

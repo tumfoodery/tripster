@@ -1,10 +1,5 @@
 import { DefaultTheme, createGlobalStyle } from "styled-components";
-import {
-  colorText,
-  colorBackground,
-  colorLink,
-  colorBackgroundDarkMode
-} from "./themeFunctions";
+import { colorText, colorBackground, colorLink } from "./themeFunctions";
 
 const darkMode =
   window.matchMedia &&
