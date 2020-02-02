@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
-import gql from "graphql-tag";
+import { gql } from "apollo-boost";
 import { useMutation, useApolloClient } from "@apollo/react-hooks";
 import Button from "components/Button";
 import Input from "components/Input";

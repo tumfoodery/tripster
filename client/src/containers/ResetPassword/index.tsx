@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import gql from "graphql-tag";
+import { gql } from "apollo-boost";
 import { useMutation } from "@apollo/react-hooks";
 import Input from "components/Input";
 import Form from "components/Form";

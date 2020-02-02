@@ -1,4 +1,4 @@
-import gql from "graphql-tag";
+import { gql } from "apollo-boost";
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import { useQuery } from "@apollo/react-hooks";
