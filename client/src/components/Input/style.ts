@@ -3,6 +3,7 @@ import {
   spacingDefault,
   colorSecondary,
   colorBackground,
+  colorText,
   fontMedium
 } from "style/themeFunctions";
 
@@ -16,5 +17,11 @@ export const InputContainer = styled.label`
     outline: none;
     padding: ${spacingDefault} 0;
     width: 100%;
+  }
+
+  input,
+  input::-webkit-input-placeholder,
+  input:-moz-placeholder {
+    color: ${colorText} !important;
   }
 `;

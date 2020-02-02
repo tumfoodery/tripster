@@ -5,6 +5,8 @@ interface Props {
 }
 
 export const colorBackground = (props: Props) => props.theme.color.background;
+export const colorBackgroundDarkMode = (props: Props) =>
+  props.theme.color.colorBackgroundDarkMode;
 export const colorButtonText = (props: Props) => props.theme.color.buttonText;
 export const colorSecondary = (props: Props) => props.theme.color.secondary;
 export const colorLink = (props: Props) => props.theme.color.link;

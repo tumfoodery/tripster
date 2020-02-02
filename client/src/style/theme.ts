@@ -1,12 +1,21 @@
 import { DefaultTheme, createGlobalStyle } from "styled-components";
-import { colorText, colorBackground, colorLink } from "./themeFunctions";
+import {
+  colorText,
+  colorBackground,
+  colorLink,
+  colorBackgroundDarkMode
+} from "./themeFunctions";
+
+const darkMode =
+  window.matchMedia &&
+  window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 export const theme: DefaultTheme = {
   color: {
-    background: "#FFFFFF",
+    background: darkMode ? "#1b1b1b" : "#FFFFFF",
     link: "#7f5af0",
     buttonText: "#fffffe",
-    text: "#000",
+    text: darkMode ? "#FFFFFF" : "#000",
     secondary: "#7f5af0"
   },
   grid: {
