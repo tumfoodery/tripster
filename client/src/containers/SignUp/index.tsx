@@ -27,14 +27,18 @@ export default function SignUp() {
   const [credentials, setCredentials] = useState({});
   const [signup, { data }] = useMutation(SIGNUP);
 
-  if (data) return <Redirect to="/" />;
+  if (data) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <LayoutSmall>
       <Form
         onSubmit={(e: React.ChangeEvent<HTMLInputElement>) => {
           e.preventDefault();
-          if (credentials) signup({ variables: credentials });
+          if (credentials) {
+            signup({ variables: credentials });
+          }
         }}
       >
         <h1>🏕</h1>

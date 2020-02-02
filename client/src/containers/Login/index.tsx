@@ -24,18 +24,20 @@ export default function Login() {
       "The password is invalid or the user does not have a password." &&
     data.login !==
       "Too many unsuccessful login attempts. Please try again later."
-  )
+  ) {
     return <Redirect to="/dashboard" />;
+  }
 
   return (
     <LayoutSmall>
       <Form
         onSubmit={(e: React.ChangeEvent<HTMLInputElement>) => {
           e.preventDefault();
-          if (credentials)
+          if (credentials) {
             login({ variables: credentials }).catch(err => {
               client.writeData({ data: { errors: err } });
             });
+          }
         }}
       >
         <h1>🏕</h1>

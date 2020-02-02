@@ -17,14 +17,18 @@ export default function SignUp() {
   const [credentials, setCredentials] = useState({});
   const [sendPasswordResetEmail, { data }] = useMutation(RESET_PASSWORD);
 
-  if (data) return <Redirect to="/" />;
+  if (data) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <LayoutSmall>
       <Form
         onSubmit={(e: React.ChangeEvent<HTMLInputElement>) => {
           e.preventDefault();
-          if (credentials) sendPasswordResetEmail({ variables: credentials });
+          if (credentials) {
+            sendPasswordResetEmail({ variables: credentials });
+          }
         }}
       >
         <h1>🏕</h1>
