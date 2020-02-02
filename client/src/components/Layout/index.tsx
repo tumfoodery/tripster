@@ -1,13 +1,18 @@
 import styled from "styled-components";
+import {
+  spacingDefault,
+  gridFullPageFormWidth,
+  themeSpacingLarge,
+  gridMaxWidth
+} from "style/themeFunctions";
 
 export const LayoutSmall = styled.div`
-  width: ${props => props.theme.grid.fullPageFormWidth};
-  margin: ${props => props.theme.spacing.large} auto
-    ${props => props.theme.spacing.default};
+  width: ${gridFullPageFormWidth};
+  margin: ${themeSpacingLarge} auto ${spacingDefault};
 `;
 
 export const LayoutLarge = styled.div`
-  width: ${props => props.theme.grid.maxWidth};
-  padding: ${props => props.theme.spacing.default};
+  width: ${gridMaxWidth};
+  padding: ${spacingDefault};
   margin: 0 auto;
 `;

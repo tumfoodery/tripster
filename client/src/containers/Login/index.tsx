@@ -13,7 +13,7 @@ const LOGIN = gql`
   }
 `;
 
-export default function Login() {
+export default function Login(props: any) {
   const [credentials, setCredentials] = useState({});
   const [login, { data }] = useMutation(LOGIN);
   const client = useApolloClient();

@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { fontSmall } from "style/themeFunctions";
 
 export const CopyrightContainer = styled.footer`
-  font-size: ${props => props.theme.font.small};
+  font-size: ${fontSmall};
   text-align: center;
 `;
