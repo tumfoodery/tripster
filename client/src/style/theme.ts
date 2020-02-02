@@ -1,5 +1,5 @@
 import { DefaultTheme, createGlobalStyle } from "styled-components";
-import { colorText, colorBackground, colorLink } from "./themeFunctions";
+import { colorText, colorBackground, colorLink } from "style/themeFunctions";
 
 export const theme: DefaultTheme = {
   color: {
