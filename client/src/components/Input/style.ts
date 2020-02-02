@@ -2,11 +2,12 @@ import styled from "styled-components";
 import {
   spacingDefault,
   colorSecondary,
-  colorBackground
+  colorBackground,
+  fontMedium
 } from "style/themeFunctions";
 
 export const InputContainer = styled.label`
-  font-size: ${props => props.theme.font.medium};
+  font-size: ${fontMedium};
   input {
     border: none;
     border-bottom: 1px solid ${colorSecondary};
