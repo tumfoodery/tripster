@@ -1,4 +1,5 @@
 import { DefaultTheme, createGlobalStyle } from "styled-components";
+import { colorText, colorBackground, colorLink } from "./themeFunctions";
 
 export const theme: DefaultTheme = {
   color: {
@@ -28,11 +29,11 @@ export const GlobalStyle = createGlobalStyle`
   body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: ${props => props.theme.color.text};
-    background: ${props => props.theme.color.background};
+    color: ${colorText};
+    background: ${colorBackground};
   }
   a {
     text-decoration: none;
-    color: ${props => props.theme.color.link};
+    color: ${colorLink};
   }
 `;
