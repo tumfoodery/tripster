@@ -1,23 +1,6 @@
 import React from "react";
-import styled from "styled-components";
 import { noop } from "utils/fn";
-
-const FormContainer = styled.form`
-  a {
-    font-size: ${props => props.theme.font.small};
-  }
-
-  > * {
-    width: 100%;
-    display: block;
-    margin-bottom: ${props => props.theme.spacing.default};
-  }
-
-  h1,
-  a {
-    text-align: center;
-  }
-`;
+import { FormContainer } from "./style";
 
 export default function Form(prop: { onSubmit?: Function; children?: any }) {
   const { onSubmit = noop, children = "" } = prop;

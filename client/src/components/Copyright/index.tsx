@@ -1,11 +1,6 @@
 import React from "react";
-import styled from "styled-components";
 import { Link } from "react-router-dom";
-
-const CopyrightContainer = styled.footer`
-  font-size: ${props => props.theme.font.small};
-  text-align: center;
-`;
+import { CopyrightContainer } from "./style";
 
 export default function Copyright() {
   return (
