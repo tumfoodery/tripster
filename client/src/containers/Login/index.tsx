@@ -5,7 +5,7 @@ import { useMutation, useApolloClient } from "@apollo/react-hooks";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import Form from "../../components/Form";
-import { LayoutContainer } from "../../components/Layout";
+import { LayoutSmall } from "../../components/Layout";
 
 const LOGIN = gql`
   mutation login($email: String!, $password: String!) {
@@ -28,7 +28,7 @@ export default function Login() {
     return <Redirect to="/dashboard" />;
 
   return (
-    <LayoutContainer>
+    <LayoutSmall>
       <Form
         onSubmit={(e: any) => {
           e.preventDefault();
@@ -66,6 +66,6 @@ export default function Login() {
         <Link to="/forgot">Forgot password?</Link>
         <Link to="/signup">{"Don't have an account? Sign Up"}</Link>
       </Form>
-    </LayoutContainer>
+    </LayoutSmall>
   );
 }

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { noop } from "../../utils/fn";
 
 const InputContainer = styled.label`
+  font-size: ${props => props.theme.font.medium};
   input {
     border: none;
     border-bottom: 1px solid ${props => props.theme.color.secondary};
@@ -13,7 +14,6 @@ const InputContainer = styled.label`
     padding: ${props => props.theme.spacing.default} 0;
     width: 100%;
   }
-  font-size: ${props => props.theme.font.small};
 `;
 
 export default function Input(prop: any) {

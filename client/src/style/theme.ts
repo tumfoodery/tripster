@@ -19,7 +19,8 @@ export const theme: DefaultTheme = {
     large: "60px"
   },
   font: {
-    small: "12px"
+    small: "12px",
+    medium: "14px"
   }
 };
 
