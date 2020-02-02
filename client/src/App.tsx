@@ -19,7 +19,6 @@ const GET_NOTIFICATIONS = gql`
 
 const App: React.FC = () => {
   const { data } = useQuery(GET_NOTIFICATIONS);
-  console.log(data);
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
