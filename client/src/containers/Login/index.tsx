@@ -64,7 +64,7 @@ export default function Login(props: any) {
           required
         />
         <Button>Sign In</Button>
-        <Link to="/forgot">Forgot password?</Link>
+        <Link to="/forgot-password">Forgot password?</Link>
         <Link to="/signup">{"Don't have an account? Sign Up"}</Link>
       </Form>
     </LayoutSmall>

@@ -29,7 +29,7 @@ const App: React.FC = () => {
           <Route path="/dashboard" exact component={Home} />
           <Route path="/login" exact component={Login} />
           <Route path="/signup" component={SignUp} />
-          <Route path="/forgot" component={ResetPassword} />
+          <Route path="/forgot-password" component={ResetPassword} />
         </Switch>
       </Router>
     </ThemeProvider>
