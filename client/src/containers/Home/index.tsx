@@ -2,14 +2,14 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import Trips from "components/Trips";
 import Copyright from "components/Copyright";
-import { LayoutFull } from "components/Layout";
+import { LayoutLarge } from "components/Layout";
 import Button from "components/Button";
 
 export default function NavTabs() {
   const history = useHistory();
 
   return (
-    <LayoutFull>
+    <LayoutLarge>
       <Trips />
       <Button
         onClick={() => {
@@ -19,6 +19,6 @@ export default function NavTabs() {
         Logout
       </Button>
       <Copyright />
-    </LayoutFull>
+    </LayoutLarge>
   );
 }
