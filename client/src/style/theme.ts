@@ -2,18 +2,21 @@ import { DefaultTheme, createGlobalStyle } from "styled-components";
 
 export const theme: DefaultTheme = {
   color: {
-    background: "#f8f5f2",
-    link: "#078080",
-    text: "#232323",
-    secondary: "#f45d48"
+    background: "#FFFFFF",
+    link: "#7f5af0",
+    buttonText: "#fffffe",
+    text: "#000",
+    secondary: "#7f5af0"
   },
   grid: {
-    maxWidth: "1600px"
+    maxWidth: "1600px",
+    fullPageFormWidth: "300px"
   },
   spacing: {
     default: "10px",
     borderRadius: "2px",
-    border: "1px"
+    border: "1px",
+    large: "60px"
   },
   font: {
     small: "12px"

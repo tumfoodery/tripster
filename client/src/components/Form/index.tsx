@@ -3,9 +3,6 @@ import styled from "styled-components";
 import { noop } from "../../utils/fn";
 
 const FormContainer = styled.form`
-  width: 300px;
-  margin: 0 auto;
-
   a {
     font-size: ${props => props.theme.font.small};
   }
@@ -13,8 +10,12 @@ const FormContainer = styled.form`
   > * {
     width: 100%;
     display: block;
-    text-align: center;
     margin-bottom: ${props => props.theme.spacing.default};
+  }
+
+  h1,
+  a {
+    text-align: center;
   }
 `;
 

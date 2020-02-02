@@ -8,7 +8,7 @@ const ButtonContainer = styled.button`
   border-radius: ${props => props.theme.spacing.borderRadius};
   padding: ${props => props.theme.spacing.default};
   background: ${props => props.theme.color.secondary};
-  color: ${props => props.theme.color.background};
+  color: ${props => props.theme.color.buttonText};
 
   &:hover {
     cursor: pointer;
