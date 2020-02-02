@@ -36,7 +36,6 @@ export default function SignUp() {
             })
           }
           name="Email"
-          placeholder="Enter Your Email"
           type="email"
           required
         />

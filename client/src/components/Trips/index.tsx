@@ -1,10 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-const TripsContainer = styled.div`
-  width: ${props => props.theme.grid.maxWidth};
-`;
+const TripsContainer = styled.div``;
 
 export default function Trips() {
-  return <TripsContainer>TRIPS</TripsContainer>;
+  return <TripsContainer>Trips</TripsContainer>;
 }

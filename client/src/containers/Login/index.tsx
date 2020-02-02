@@ -48,7 +48,6 @@ export default function Login() {
             })
           }
           name="Email"
-          placeholder="Enter Your Email"
           type="email"
           required
         />
@@ -60,7 +59,6 @@ export default function Login() {
             })
           }
           name="Password"
-          placeholder="Enter Your Password"
           type="password"
           required
         />

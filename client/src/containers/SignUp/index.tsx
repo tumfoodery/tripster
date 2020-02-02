@@ -46,7 +46,6 @@ export default function SignUp() {
             })
           }
           name="First Name"
-          placeholder="Enter your first name"
           required
         />
         <Input
@@ -57,7 +56,6 @@ export default function SignUp() {
             })
           }
           name="Last Name"
-          placeholder="Enter your last name"
           required
         />
         <Input
@@ -68,7 +66,6 @@ export default function SignUp() {
             })
           }
           name="Email"
-          placeholder="Enter Your Email"
           required
         />
         <Input
@@ -79,7 +76,6 @@ export default function SignUp() {
             })
           }
           name="Password"
-          placeholder="Enter Your Password"
           type="password"
           required
         />

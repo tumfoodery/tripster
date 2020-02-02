@@ -8,5 +8,6 @@ export const LayoutSmall = styled.div`
 
 export const LayoutFull = styled.div`
   width: ${props => props.theme.grid.maxWidth};
+  padding: ${props => props.theme.spacing.default};
   margin: 0 auto;
 `;

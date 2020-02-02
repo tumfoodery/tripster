@@ -14,7 +14,7 @@ export const theme: DefaultTheme = {
   },
   spacing: {
     default: "10px",
-    borderRadius: "2px",
+    borderRadius: "4px",
     border: "1px",
     large: "60px"
   },

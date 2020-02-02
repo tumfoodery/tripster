@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import Trips from "../../components/Trips";
 import Copyright from "../../components/Copyright";
 import { LayoutFull } from "../../components/Layout";
+import Button from "../../components/Button";
 
 export default function NavTabs() {
   const history = useHistory();
@@ -10,13 +11,13 @@ export default function NavTabs() {
   return (
     <LayoutFull>
       <Trips />
-      <button
+      <Button
         onClick={() => {
           history.push("/login");
         }}
       >
         Logout
-      </button>
+      </Button>
       <Copyright />
     </LayoutFull>
   );

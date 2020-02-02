@@ -13,7 +13,7 @@ import ResetPassword from "./containers/ResetPassword";
 
 const GET_NOTIFICATIONS = gql`
   {
-    errors @client
+    toastOptions @client
   }
 `;
 
@@ -23,7 +23,7 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Toast />
+      <Toast {...data} />
       <Router>
         <Switch>
           <Route path="/" exact component={Login} />
