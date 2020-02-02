@@ -9,6 +9,7 @@ import { theme, GlobalStyle } from "./style/theme";
 import Login from "./containers/Login";
 import Home from "./containers/Home";
 import SignUp from "./containers/SignUp";
+import ResetPassword from "./containers/ResetPassword";
 
 const GET_NOTIFICATIONS = gql`
   {
@@ -29,6 +30,7 @@ const App: React.FC = () => {
           <Route path="/dashboard" exact component={Home} />
           <Route path="/login" exact component={Login} />
           <Route path="/signup" component={SignUp} />
+          <Route path="/forgot" component={ResetPassword} />
         </Switch>
       </Router>
     </ThemeProvider>
