@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { noop } from "../../utils/fn";
+import { noop } from "utils/fn";
 
 const InputContainer = styled.label`
   font-size: ${props => props.theme.font.medium};
@@ -24,7 +24,7 @@ export default function Input(prop: any) {
       <br />
       <input
         placeholder={placeholder}
-        onChange={(e: any) => onChange(e)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange(e)}
         {...rest}
         data-lpignore="true"
       />

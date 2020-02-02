@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { noop } from "../../utils/fn";
+import { noop } from "utils/fn";
 
 const ButtonContainer = styled.button`
   border: ${props => props.theme.spacing.border} solid

@@ -32,14 +32,14 @@ export default function SignUp() {
   return (
     <LayoutSmall>
       <Form
-        onSubmit={(e: any) => {
+        onSubmit={(e: React.ChangeEvent<HTMLInputElement>) => {
           e.preventDefault();
           if (credentials) signup({ variables: credentials });
         }}
       >
         <h1>🏕</h1>
         <Input
-          onChange={(e: any) =>
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setCredentials({
               ...credentials,
               firstName: e.currentTarget.value
@@ -49,7 +49,7 @@ export default function SignUp() {
           required
         />
         <Input
-          onChange={(e: any) =>
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setCredentials({
               ...credentials,
               lastName: e.currentTarget.value
@@ -59,7 +59,7 @@ export default function SignUp() {
           required
         />
         <Input
-          onChange={(e: any) =>
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setCredentials({
               ...credentials,
               email: e.currentTarget.value
@@ -69,7 +69,7 @@ export default function SignUp() {
           required
         />
         <Input
-          onChange={(e: any) =>
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setCredentials({
               ...credentials,
               password: e.currentTarget.value

@@ -30,18 +30,17 @@ export default function Login() {
   return (
     <LayoutSmall>
       <Form
-        onSubmit={(e: any) => {
+        onSubmit={(e: React.ChangeEvent<HTMLInputElement>) => {
           e.preventDefault();
           if (credentials)
             login({ variables: credentials }).catch(err => {
               client.writeData({ data: { errors: err } });
-              alert(err);
             });
         }}
       >
         <h1>🏕</h1>
         <Input
-          onChange={(e: any) =>
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setCredentials({
               ...credentials,
               email: e.currentTarget.value
@@ -52,7 +51,7 @@ export default function Login() {
           required
         />
         <Input
-          onChange={(e: any) =>
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setCredentials({
               ...credentials,
               password: e.currentTarget.value

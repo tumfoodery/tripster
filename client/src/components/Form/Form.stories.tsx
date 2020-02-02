@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "./index";
-import Input from "../Input";
-import Button from "../Button";
+import Input from "components/Input";
+import Button from "components/Button";
 
 export default {
   title: "Form",

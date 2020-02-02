@@ -22,14 +22,14 @@ export default function SignUp() {
   return (
     <LayoutSmall>
       <Form
-        onSubmit={(e: any) => {
+        onSubmit={(e: React.ChangeEvent<HTMLInputElement>) => {
           e.preventDefault();
           if (credentials) sendPasswordResetEmail({ variables: credentials });
         }}
       >
         <h1>🏕</h1>
         <Input
-          onChange={(e: any) =>
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setCredentials({
               ...credentials,
               password: e.currentTarget.value
