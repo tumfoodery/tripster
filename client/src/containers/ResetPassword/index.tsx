@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import gql from "graphql-tag";
 import { useMutation } from "@apollo/react-hooks";
-import Input from "../../components/Input";
-import Form from "../../components/Form";
-import Button from "../../components/Button";
-import { LayoutSmall } from "../../components/Layout";
+import Input from "components/Input";
+import Form from "components/Form";
+import Button from "components/Button";
+import { LayoutSmall } from "components/Layout";
 
 const RESET_PASSWORD = gql`
   mutation sendPasswordResetEmail($email: String!) {
@@ -32,7 +32,7 @@ export default function SignUp() {
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setCredentials({
               ...credentials,
-              password: e.currentTarget.value
+              password: e.target.value
             })
           }
           name="Email"

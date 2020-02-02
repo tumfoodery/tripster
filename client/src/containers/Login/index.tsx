@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import gql from "graphql-tag";
 import { useMutation, useApolloClient } from "@apollo/react-hooks";
-import Button from "../../components/Button";
-import Input from "../../components/Input";
-import Form from "../../components/Form";
-import { LayoutSmall } from "../../components/Layout";
+import Button from "components/Button";
+import Input from "components/Input";
+import Form from "components/Form";
+import { LayoutSmall } from "components/Layout";
 
 const LOGIN = gql`
   mutation login($email: String!, $password: String!) {
@@ -43,7 +43,7 @@ export default function Login() {
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setCredentials({
               ...credentials,
-              email: e.currentTarget.value
+              email: e.target.value
             })
           }
           name="Email"
@@ -54,7 +54,7 @@ export default function Login() {
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setCredentials({
               ...credentials,
-              password: e.currentTarget.value
+              password: e.target.value
             })
           }
           name="Password"
