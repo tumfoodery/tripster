@@ -18,7 +18,7 @@ const ButtonContainer = styled.button`
 export default function Button(prop: any) {
   const { onClick = noop, children = "", ...rest } = prop;
   return (
-    <ButtonContainer onClick={e => onClick(e)} {...rest}>
+    <ButtonContainer onClick={onClick} {...rest}>
       {children}
     </ButtonContainer>
   );
