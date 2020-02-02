@@ -45,7 +45,7 @@ export default function SignUp() {
               firstName: e.currentTarget.value
             })
           }
-          placeholder="first name"
+          placeholder="First Name"
           required
         />
         <Input
@@ -55,7 +55,7 @@ export default function SignUp() {
               lastName: e.currentTarget.value
             })
           }
-          placeholder="last name"
+          placeholder="Last Name"
           required
         />
         <Input
@@ -65,7 +65,7 @@ export default function SignUp() {
               email: e.currentTarget.value
             })
           }
-          placeholder="email"
+          placeholder="Email"
           required
         />
         <Input
@@ -75,7 +75,7 @@ export default function SignUp() {
               password: e.currentTarget.value
             })
           }
-          placeholder="password"
+          placeholder="Password"
           type="password"
           required
         />

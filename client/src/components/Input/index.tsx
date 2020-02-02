@@ -22,7 +22,12 @@ export default function Input(prop: any) {
     <InputContainer>
       {placeholder}
       <br />
-      <input onChange={e => onChange(e)} {...rest} data-lpignore="true" />
+      <input
+        placeholder={placeholder}
+        nChange={(e: any) => onChange(e)}
+        {...rest}
+        data-lpignore="true"
+      />
     </InputContainer>
   );
 }
