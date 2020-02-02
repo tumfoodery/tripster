@@ -17,14 +17,14 @@ const InputContainer = styled.label`
 `;
 
 export default function Input(prop: any) {
-  const { placeholder = "", onChange = noop, ...rest } = prop;
+  const { placeholder = "", name = "", onChange = noop, ...rest } = prop;
   return (
     <InputContainer>
-      {placeholder}
+      {name}
       <br />
       <input
         placeholder={placeholder}
-        nChange={(e: any) => onChange(e)}
+        onChange={(e: any) => onChange(e)}
         {...rest}
         data-lpignore="true"
       />

@@ -35,6 +35,7 @@ export default function SignUp() {
               password: e.currentTarget.value
             })
           }
+          name="Email"
           placeholder="Enter Your Email"
           type="email"
           required

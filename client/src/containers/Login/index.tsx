@@ -47,7 +47,8 @@ export default function Login() {
               email: e.currentTarget.value
             })
           }
-          placeholder="Email"
+          name="Email"
+          placeholder="Enter Your Email"
           type="email"
           required
         />
@@ -58,7 +59,8 @@ export default function Login() {
               password: e.currentTarget.value
             })
           }
-          placeholder="Password"
+          name="Password"
+          placeholder="Enter Your Password"
           type="password"
           required
         />
