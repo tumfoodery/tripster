@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const CopyrightContainer = styled.footer`
   font-size: ${props => props.theme.font.small};
+  text-align: center;
 `;
 
 export default function Copyright() {
