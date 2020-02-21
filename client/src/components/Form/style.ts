@@ -6,10 +6,14 @@ export const FormContainer = styled.form`
     font-size: ${fontSmall};
   }
 
-  > * {
+  > *:not(img) {
     width: 100%;
     display: block;
     margin-bottom: ${spacingDefault};
+  }
+
+  img {
+    width: 20px;
   }
 
   h1,

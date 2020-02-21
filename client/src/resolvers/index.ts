@@ -1,12 +1,15 @@
 export const defaults = {
   user: null,
   trips: [],
-  locations: []
+  locations: [],
+  notification: {
+    description: ""
+  }
 };
 
 export const resolvers = {
   Notification: {
-    text() {
+    description() {
       return "";
     }
   }

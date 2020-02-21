@@ -41,7 +41,9 @@ export default function Login(props: any) {
           }
         }}
       >
-        <h1>🏕</h1>
+        <div>
+          <img src="/logo192.png" />
+        </div>
         <Input
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setCredentials({
