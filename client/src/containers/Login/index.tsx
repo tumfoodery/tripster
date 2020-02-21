@@ -71,14 +71,14 @@ export default function Login(props: any) {
           <span
             role="img"
             aria-label="sun"
-            onClick={() => darkMode(!darkMode())}
+            onClick={() => darkMode.set(!darkMode.darkMode)}
           >
             ☀️
           </span>
           <span
             role="img"
             aria-label="moon"
-            onClick={() => darkMode(!darkMode())}
+            onClick={() => darkMode.set(!darkMode.darkMode)}
           >
             🌙
           </span>

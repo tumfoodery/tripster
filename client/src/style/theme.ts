@@ -1,17 +1,26 @@
 import { DefaultTheme, createGlobalStyle } from "styled-components";
 import { colorText, colorBackground, colorLink } from "./themeFunctions";
 
-export const darkMode = (darkMode?: boolean) =>
-  (window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches) ||
-  darkMode;
+interface DarkMode {
+  darkMode: boolean;
+  set: Function;
+}
 
-export const theme: DefaultTheme = (() => ({
+export const darkMode: DarkMode = {
+  darkMode:
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches,
+  set: function(mode: boolean) {
+    this.darkMode = mode;
+  }
+};
+
+export const theme: Function = (): DefaultTheme => ({
   color: {
-    background: darkMode() ? "#1b1b1b" : "#FFFFFF",
+    background: darkMode.darkMode ? "#1b1b1b" : "#FFFFFF",
     link: "#7f5af0",
     buttonText: "#fffffe",
-    text: darkMode() ? "#FFFFFF" : "#000",
+    text: darkMode.darkMode ? "#FFFFFF" : "#000",
     secondary: "#7f5af0"
   },
   grid: {
@@ -28,7 +37,7 @@ export const theme: DefaultTheme = (() => ({
     small: "12px",
     medium: "14px"
   }
-}))();
+});
 
 export const GlobalStyle = createGlobalStyle`
   body {
