@@ -13,8 +13,15 @@ const LOGIN = gql`
   }
 `;
 
+const SET_NOTIFICATION = gql`
+  mutation SetNotification($id: Int!) {
+    toggleTodo(id: $id) @client
+  }
+`;
+
 export default function Login(props: any) {
   const [credentials, setCredentials] = useState({});
+  const [setNotification] = useMutation(SET_NOTIFICATION);
   const [login, { data }] = useMutation(LOGIN);
   const client = useApolloClient();
 
@@ -26,6 +33,8 @@ export default function Login(props: any) {
       "Too many unsuccessful login attempts. Please try again later."
   ) {
     return <Redirect to="/dashboard" />;
+  } else if (data && data.login) {
+    setNotification(data.login);
   }
 
   return (
@@ -40,7 +49,7 @@ export default function Login(props: any) {
           }
         }}
       >
-        <h1>🏕</h1>
+        <img alt="logo" src="/logo192.png" />
         <Input
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setCredentials({

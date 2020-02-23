@@ -13,7 +13,7 @@ import ResetPassword from "./containers/ResetPassword";
 
 const GET_NOTIFICATIONS = gql`
   {
-    toastOptions @client
+    notifications
   }
 `;
 

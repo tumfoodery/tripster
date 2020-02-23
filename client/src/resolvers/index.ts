@@ -1,10 +1,13 @@
 export const defaults = {
-  user: null,
-  trips: [],
-  locations: []
+  notifications: {}
 };
 
 export const resolvers = {
-  User: {},
-  Mutation: {}
+  Notifications: {},
+  Mutation: {
+    SetNotification(_root: any, notification: any, { cache }: any) {
+      cache.writeData({ notification });
+      return;
+    }
+  }
 };
