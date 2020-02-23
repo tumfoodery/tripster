@@ -12,6 +12,13 @@ export const FormContainer = styled.form`
     margin-bottom: ${spacingDefault};
   }
 
+  img {
+    width: auto;
+    margin: 0 auto;
+    height: 30px;
+    display: block;
+  }
+
   h1,
   a {
     text-align: center;
