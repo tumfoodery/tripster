@@ -1,10 +1,15 @@
 export const defaults = {
-  user: null,
-  trips: [],
-  locations: []
+  notification: {}
 };
 
 export const resolvers = {
-  User: {},
-  Mutation: {}
+  Notification: {},
+  Mutation: {
+    setNotification(a: any, b: any, c: any) {
+      console.log(a);
+      console.log(b);
+      console.log(c);
+      return "Test";
+    }
+  }
 };
